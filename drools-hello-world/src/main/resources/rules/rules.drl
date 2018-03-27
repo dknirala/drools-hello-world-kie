@@ -1,0 +1,17 @@
+package rules;
+
+import com.javainuse.model.Product;
+
+rule "Offer on diamond"
+	when
+		$product : Product(type=="diamond")
+	then
+		$product.setDiscount(15);
+end
+
+rule "Offer on Gold"
+	when
+		$product : Product(type=="gold")
+	then
+		$product.setDiscount(25);
+end
