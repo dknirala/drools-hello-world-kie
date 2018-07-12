@@ -1,10 +1,12 @@
 package rules;
 
 import com.javainuse.model.Product;
+import com.javainuse.model.Utility;
 
 rule "Offer on diamond"
 	when
 		$product : Product(type=="diamond")
+		Utility( test == com.javainuse.model.Utility.isCorrectProduct("abc"))
 	then
 		$product.setDiscount(15);
 end

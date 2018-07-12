@@ -19,9 +19,13 @@ public class DroolTest {
 			Product product = new Product();
 			product.setType("gold");
 
+			Utility utility = new Utility();
+			utility.setTest(true);
+
 			FactHandle fact1;
 
 			fact1 = kSession.insert(product);
+			kSession.insert(utility);
 			kSession.fireAllRules();
 
 			System.out.println(
